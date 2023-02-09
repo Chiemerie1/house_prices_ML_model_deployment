@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            House Price
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src=webapp.js></script>
+        <link rel="stylesheet" href="webapp.css">
+    </head>
+    
+    <body>
+        <div class="img"></div>
+        <div><h2>House Price Prediction</h2></div>
+        <form class="form">
+            <h2>Land Area (in SQFt)</h2>
+            <input class="area" type="email" id="sqft", class="floatLabel" name="area" value="2000">
+
+            <h2>Bedroom(s)</h2>
+            <div class="switch-field">
+                <input type="radio" id="radio-bedroom-1" name="Bedroom" value="1"/>
+                <label for="radio-bedroom-1">1</label>
+
+                <input type="radio" id="radio-bedroom-1" name="Bedroom" value="2"/>
+                <label for="radio-bedroom-2">2</label>
+
+                <input type="radio" id="radio-bedroom-1" name="Bedroom" value="3"/>
+                <label for="radio-bedroom-3">3</label>
+
+                <input type="radio" id="radio-bedroom-1" name="Bedroom" value="4"/>
+                <label for="radio-bedroom-4">4</label>
+
+                <input type="radio" id="radio-bedroom-1" name="Bedroom" value="5"/>
+                <label for="radio-bedroom-5">5</label>
+            </div>
+        </form>
+
+        <form class="form">
+            <h2>bathroom(s)</h2>
+            <div class="switch-field">
+                <input type="radio" id="radio-bathroom-1" name="bathroom" value="1"/>
+                <label for="radio-bathroom-1">1</label>
+
+                <input type="radio" id="radio-bathroom-1" name="bathroom" value="2"/>
+                <label for="radio-bathroom-2">2</label>
+
+                <input type="radio" id="radio-bathroom-1" name="bathroom" value="3"/>
+                <label for="radio-bathroom-3">3</label>
+
+                <input type="radio" id="radio-bathroom-1" name="bathroom" value="4"/>
+                <label for="radio-bathroom-4">4</label>
+
+                <input type="radio" id="radio-bathroom-1" name="bathroom" value="5"/>
+                <label for="radio-bathroom-5">5</label>
+            </div>
+
+            <div>
+                <h3>Property Location</h3>
+            </div>
+            
+            <select class="location" name="" id="theLocations">
+                <option value="" disabled="disabled" selected="selected">Select Preferred Property Location</option>
+                <option>it is</option>
+                <option>what it is</option>
+            </select>
+
+            <button class="submit" onclick="onclickAproximateHousePrice()" type="button">Get price</button>
+            <div class="result" id="ApproxPrice">
+                <h2></h2>
+            </div>
+
+        </form>
+
+    </body>
+</html>
