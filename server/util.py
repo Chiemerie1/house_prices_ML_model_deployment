@@ -48,6 +48,5 @@ def load_artifacts():
 
 if __name__ =="__main__":
     load_artifacts()
-    # print(get_locations())
 
-    print("House price: ", get_approx_price("Indira Nagar", 1000, 2, 3))
+    # print("House price: ", get_approx_price("Indira Nagar", 1000, 2, 3))

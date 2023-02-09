@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from server import util
+import util
 
 
 app = Flask(__name__)
@@ -21,7 +21,24 @@ def get_locations():
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
+@app.route("/predict-price", methods=['POST'])
+def predict_price():
+    loc = request.form["loc"]
+    sqft = float(request.form["sft"])
+    bedrooms = int(request.form["bedrooms"])
+    bath = int(request.form["bath"])
+
+    response = jsonify(
+        {
+            "approximate_price": util.get_approx_price(loc, sqft, bedrooms, bath)
+        }
+    )
+    response.headers.add("Access-Control-Allow-Origin", "*")
+
+    return response
+
 
 if __name__ == "__main__":
     print("python flask server started...")
+    util.load_artifacts()
     app.run()
