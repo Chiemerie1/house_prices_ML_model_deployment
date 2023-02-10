@@ -29,14 +29,9 @@ function approximatePrice() {
 
     $.post(
         webUrl, {
-            // sft: parseFloat(sft.value),
-            // bath: parseInt(bathroom),
-            // bedrooms: parseInt(bedrooms),
-            // loc: loc.value,
-
             sft: parseFloat(sft.value),
-            bath: 3,
-            bedrooms: 3,
+            bath: parseInt(bathroom.value),
+            bedrooms: parseInt(bedrooms.value),
             loc: loc.value,
         },
         function(data, status) {
